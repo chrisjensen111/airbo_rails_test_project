@@ -1,0 +1,22 @@
+<h1>Disputed Charges</h1>
+<table bgcolor = "#FF54000">
+  <thead>
+    <tr>
+      <th>Customers name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disputed_transaction.each do |charge| %>
+      <tr>
+        <td><%= charge['first_name'] + " " + charge["last_name"] %></td>
+        <td><%= charge['amount'].to_s + " " + charge['currency'] %> </td>
+        <td><%= charge['created_at'].strftime("%d %b %y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
